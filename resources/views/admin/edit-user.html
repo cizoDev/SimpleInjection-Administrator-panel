@@ -1,0 +1,164 @@
+<style type="text/css">
+  .dataTables_length{
+    margin-top: 10px;
+  }
+  .select2-selection .select2-selection--single{
+    width: 307px;
+  }
+  .select2 .select2-container{
+        width: 308px !important;
+  }
+  table th {
+   text-align: center;
+  }
+  table tr {
+   text-align: center;
+  }
+</style>
+<div class="">
+  <!--Start leads inner-menu seaction-->
+  <div class="page-inner-menu">
+    <ul class="list-inline list-unstyle ">
+      <li ng-class="{'active': isActive(['/dashboard'])}">
+        <a href="manage/classified">DASHBOARD > EDIT USER </a>
+      </li>
+    </ul>
+  </div>
+  <!--End leads inner-menu seaction-->
+  <div class="clearfix"></div>
+  <!--Start Active lead seaction-->
+  <div class="row">
+    <div class="col-sm-12 margin-top-20">
+      <div class="portlet light bordered content-filter">
+       <div class="portlet-body">
+        	 <div class="row">
+              <div class="col-md-12">
+                  <div class="portlet box">
+                              <div class="portlet-title bg-green-turquoise bold uppercase">
+                                                    <div class="caption"> EDIT USER </div>
+                                                    <ul class="nav nav-tabs">
+                                                        <li class="active">
+                                                            <a href="#portlet_tab_1" class="mylink" data-toggle="tab" aria-expanded="true"> Edit user info </a>
+                                                        </li>
+                                                        <li class="">
+                                                            <a href="#portlet_tab_2" class="mylink" data-toggle="tab" aria-expanded="false">Assign devices </a>
+                                                        </li>
+                                                        <li class="">
+                                                            <a href="#portlet_tab_3" class="mylink" data-toggle="tab" aria-expanded="false"> User devices </a>
+                                                        </li>
+                                                        <!-- <li class="">
+                                                            <a href="#portlet_tab_4" class="mylink" data-toggle="tab" aria-expanded="false"> ingredients </a>
+                                                        </li> -->
+                                                    </ul>
+                                                </div>
+                                                <div class="portlet-body">
+                                                    <div class="tab-content">
+                                                    	<!-- Edit info ends here -->
+                                                        <div class="tab-pane active" id="portlet_tab_1">
+                                                            <div class="row">
+                                                              <div class="col-md-12">
+                                                                <form class="form form-horizontal" method="post" id="edit-user">
+                                                                	<input type="hidden" name="id" value="[[userInfo.id]]">
+                                                                    <div class="form-body">
+                                                                      <div class="form-group form-md-line-input form-md-floating-label">
+                                                                          <label class="col-md-3 control-label">NAME :</label>
+                                                                            <div class="col-md-4">
+                                                                                  <input type="text" class="form-control spinner" name="user_name" placeholder="Name" value="[[userInfo.name]]" required="required">
+                                                                            </div>
+                                                                      </div>
+                                                                      <div class="form-group form-md-line-input form-md-floating-label">
+                                                                          <label class="col-md-3 control-label">EMAIL :</label>
+                                                                            <div class="col-md-4">
+                                                                                  <input type="text" class="form-control spinner" name="user_email" placeholder="Email" value="[[userInfo.email]]" required="required">
+                                                                            </div>
+                                                                      </div>
+                                                                      <div class="form-group form-md-line-input">
+                                                                              <label class="col-md-3 control-label">STATUS:</label>
+                                                                                  <div class="col-md-4">
+                                                                                    <div class="md-checkbox-list">
+                                                                                      <div class="md-checkbox">
+                                                                                          <input type="checkbox" id="hair_1" class="md-check" name="status" ng-checked="userInfo.status == 1" value="1">
+                                                                                               <label for="hair_1"><span class="inc"></span><span class="check"></span> <span class="box"></span> Active </label>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                          </div>
+                                                                    </div>
+                                                                    <div class="form-actions">
+                                                                            <div class="row">
+                                                                                <div class="col-md-offset-3 col-md-9">
+                                                                                    <button type="submit" class="btn green">Update</button>
+                                                                                    <a href="manage/users" class="btn default">Cancel</a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                  </form>
+                                                              </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- edit user info ends here -->
+                                                        <!-- device assigned starts here -->
+                                                        <div class="tab-pane" id="portlet_tab_2">
+                                                            <div class="row">
+                                                              <div class="col-md-12">
+                                                                <form class="form form-horizontal" method="post" id="assign-device">
+                                                                    <input type="hidden" name="id" value="[[userInfo.id]]">
+                                                                    <div class="form-body">
+                                                                      <div class="form-group">
+                                                                            <label for="device_id" class="col-sm-3 control-label">Select Device:</label>
+                                                                            <div class="col-md-4">
+                                                                                <select name="device_id" id="device_id" class="form-control select2 edit-user-device">
+                                                                                  <option value="">Select device (Start typing here...)</option>
+                                                                                    <option ng-repeat="list in deviceList" value="[[list.id]]">[[list.name]] ([[list.unique_id]])</option>
+                                                                                </select>
+                                                                            </div>
+                                                                      </div>
+                                                                    </div>
+                                                                    <div class="form-actions">
+                                                                        <div class="row">
+                                                                            <div class="col-md-offset-3 col-md-9">
+                                                                                <button type="submit" class="btn green">Assign</button>
+                                                                                <a href="manage/users" class="btn default">Cancel</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                  </form>
+                                                              </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- device assigned here -->
+
+                                                        <!-- Device assigned list starts from here-->
+                                                        <div class="tab-pane" id="portlet_tab_3">
+                                                                    <div class="row">
+                                                                      <div class="col-md-12">
+                                                                        <div class="table-responsive">
+                                                                              <table class="table table-striped table-hover table-checkable order-column" id="device_assigned_list">
+                                                                                    <thead>
+                                                                                      <tr>
+                                                                                          <th>Id </th>
+                                                                                          <th>Device name </th>
+                                                                                          <th>Assigned on</th>
+                                                                                          <th>Status</th>
+                                                                                          <th>Action</th>
+                                                                                          </tr>
+                                                                                      </thead>
+                                                                                    <tbody>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                        </div>
+                                                          <!-- Device assigned list ends here-->
+                                              </div>
+                                    </div>
+                            </div>
+              </div>
+           </div>
+           <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

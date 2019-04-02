@@ -1,0 +1,96 @@
+<style type="text/css">
+  .dataTables_length{
+    margin-top: 10px;
+  }
+</style>
+<div class="">
+  <!--Start leads inner-menu seaction-->
+  <div class="page-inner-menu">
+    <ul class="list-inline list-unstyle ">
+      <li ng-class="{'active': isActive(['/classified'])}">
+        <a href="manage/classified">DASHBOARD > MY PROFILE </a>
+      </li>
+    </ul>
+  </div>
+  <!--End leads inner-menu seaction-->
+  <div class="clearfix"></div>
+  <!--Start Active lead seaction-->
+  <div class="row">
+    <div class="col-sm-6 margin-top-20">
+      <div class="portlet light bordered content-filter">
+        <div class="portlet-title">
+          <div class="caption">
+            <span class="caption-subject bold uppercase ">
+              MY PROFILE
+            </span>
+          </div>
+        </div>
+        <div class="portlet-body">
+        	<div class="row">
+           <form class="form form-horizontal" method="post" id="profile-form">
+            <input type="hidden" name="id" value="[[adminInfo.id]]">
+            <div class="form-body">
+              <div class="form-group form-md-line-input form-md-floating-label">
+                  <label class="col-md-3 control-label">Name :</label>
+                      <div class="col-md-8">
+                      <input type="text" class="form-control spinner" name="name" placeholder="Name" value="[[adminInfo.name]]"> </div>
+              </div>
+              <div class="form-group form-md-line-input">
+                  <label class="col-md-3 control-label">Email :</label>
+                      <div class="col-md-8">
+                      <input type="text" class="form-control spinner" name="email" placeholder="Email" value="[[adminInfo.email]]"> </div>
+              </div>
+            </div>
+              <div class="form-actions">
+                  <div class="row">
+                      <div class="col-md-offset-3 col-md-9">
+                          <button type="submit" class="btn green">Update</button>
+                          <a href="manage/dashboard" class="btn default">Cancel</a>
+                      </div>
+                  </div>
+              </div>
+           </form> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 margin-top-20">
+      <div class="portlet light bordered content-filter">
+        <div class="portlet-title">
+          <div class="caption">
+            <span class="caption-subject bold uppercase ">
+              UPATE PASSWORD
+            </span>
+          </div>
+        </div>
+        <div class="portlet-body">
+          <div class="row">
+           <form class="form form-horizontal" method="post" id="password-form">
+            <input type="hidden" name="id" value="[[adminInfo.id]]">
+            <div class="form-body">
+              <div class="form-group form-md-line-input form-md-floating-label">
+                  <label class="col-md-3 control-label">New password:</label>
+                      <div class="col-md-8">
+                      <input type="text" class="form-control spinner" name="password" placeholder="New Password"> </div>
+              </div>
+              <div class="form-group form-md-line-input">
+                  <label class="col-md-3 control-label">Confirm password:</label>
+                      <div class="col-md-8">
+                      <input type="text" class="form-control spinner" name="confirm_password" placeholder="Confirm password"> </div>
+              </div>
+            </div>
+              <div class="form-actions">
+                  <div class="row">
+                      <div class="col-md-offset-3 col-md-9">
+                          <button type="submit" class="btn green">Update password</button>
+                          <a href="manage/dashboard" class="btn default">Cancel</a>
+                      </div>
+                  </div>
+              </div>
+           </form> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

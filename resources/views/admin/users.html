@@ -1,0 +1,68 @@
+<style type="text/css">
+  .dataTables_length{
+    margin-top: 10px;
+  }
+  table th {
+   text-align: center;
+  }
+  table tr {
+   text-align: center;
+  }
+</style>
+<div class="">
+  <!--Start leads inner-menu seaction-->
+  <div class="page-inner-menu">
+    <ul class="list-inline list-unstyle ">
+      <li ng-class="{'active': isActive(['/classified'])}">
+        <a href="manage/classified">DASHBOARD > APPLICATION USERS </a>
+      </li>
+    </ul>
+  </div>
+  <!--End leads inner-menu seaction-->
+  <div class="clearfix"></div>
+  <!--Start Active lead seaction-->
+  <div class="row">
+    <div class="col-sm-12 margin-top-20">
+      <div class="portlet light bordered content-filter">
+        <div class="portlet-title">
+          <div class="caption">
+            <span class="caption-subject bold uppercase ">
+              APPLICATION USERS
+            </span>
+          </div>
+          	<span class="text-right" style="float: right;">
+              <a href="manage/add-user" class="btn blue"><i class="fa fa-plus"></i> Add new user</a>
+            </span>
+        </div>
+        <div class="portlet-body">
+          <form class="form form-horizontal">
+            <div class="row">
+              <div class="form-group form-md-line-input">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-5"><input type="text" class="form-control spinner" name="product_name" id="search_user_string" placeholder="Search by name"> </div>
+                  
+                  <div class="col-md-1"></div>
+                </div>
+            </div>
+          </form>
+        	<div class="table-responsive">
+                <table class="table table-striped table-hover table-checkable order-column" id="user_list">
+                      <thead>
+                        <tr>
+                            <th>Id </th>
+                            <th>Name </th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Created at</th>
+                            <th>Action</th>
+                            </tr>
+                        </thead>
+                      <tbody>
+                      </tbody>
+                  </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<style type="text/css">
+  .dataTables_length{
+    margin-top: 10px;
+  }
+  .form-group.form-md-line-input .help-block { opacity: 1; }
+</style>
+<div class="">
+  <!--Start leads inner-menu seaction-->
+  <div class="page-inner-menu">
+    <ul class="list-inline list-unstyle ">
+      <li ng-class="{'active': isActive(['/classified'])}">
+        <a href="manage/classified">DASHBOARD > DEVICES > EDIT DEVICE </a>
+      </li>
+    </ul>
+  </div>
+  <!--End leads inner-menu seaction-->
+  <div class="clearfix"></div>
+  <!--Start Active lead seaction-->
+  <div class="row">
+    <div class="col-sm-12 margin-top-20">
+      <div class="portlet light bordered content-filter">
+        <div class="portlet-title">
+          <div class="caption">
+            <span class="caption-subject bold uppercase ">
+              EDIT DEVICE
+            </span>
+          </div>
+        </div>
+        <div class="portlet-body">
+        	<div class="row">
+           <form class="form form-horizontal" method="post" id="edit-device">
+           	<input type="hidden" name="device_id" value="[[deviceInfo.id]]">
+            <div class="form-body">
+              <div class="form-group form-md-line-input form-md-floating-label">
+                  <label class="col-md-3 control-label">NAME :</label>
+                      <div class="col-md-4">
+                      <input type="text" class="form-control spinner" name="name" value="[[deviceInfo.name]]" placeholder="Name"> </div>
+              </div>
+              <div class="form-group form-md-line-input form-md-floating-label">
+                  <label class="col-md-3 control-label">UNIQUE ID :</label>
+                    <div class="col-md-4">
+                      <input type="text" class="form-control spinner" name="unique_id" value="[[deviceInfo.unique_id]]" placeholder="Unique Id"> 
+                    </div>
+              </div>
+            	</div>
+              <div class="form-actions">
+                  <div class="row">
+                      <div class="col-md-offset-3 col-md-9">
+                          <button type="submit" class="btn green">Update</button>
+                          <a href="manage/devices" class="btn default">Cancel</a>
+                      </div>
+                  </div>
+              </div>
+           </form> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

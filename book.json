@@ -1,0 +1,27 @@
+{
+    "SDCXV-FGH-990": {
+      "data": {
+        "pump_status": "on",
+        "batch_mode_date": 1,
+        "batch_mode_month":0,
+        "temprature_level":0,
+        "batch_mode_quarts":0,
+        "batch_mode_repeat_day":0,
+        "batch_mode_time_hour":0,
+        "batch_mode_time_minute":0,
+        "battery_level":0,
+        "charge_mode":0,
+        "off_mode_second":0,
+        "on_mode_second":0,
+        "prime_mode_minutes": 0,
+        "solar_volate_produced_today": 345,
+        "tank_level": 12,
+        "temprature_level": 1,
+        "quarts": 9
+      },
+      "battery_level":{},
+      "solar_production":{},
+      "tank_level":{},
+      "temprature_level":{}
+    }
+  }
